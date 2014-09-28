@@ -14,7 +14,7 @@ class  swap {
         priority => "10",
         content  => '#!/bin/bash
 SWAP=`/sbin/swapon -s | wc -l`
-if [[ $SWAP -gt 1 ]]; then
+if [[ $SWAP -le 1 ]]; then
   /sbin/mkswap /var/swap.1 && /sbin/swapon /var/swap.1
 fi
 
